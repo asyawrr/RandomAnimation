@@ -18,10 +18,10 @@ struct AnimationType {
     
     var descryption: String {
         """
-        name: \(name),
-        curve: \(curve),
-        duration: \(String(format: "%.2f", duration)),
-        delay: \(String(format: "%.2f", delay)),
+        name: \(name)
+        curve: \(curve)
+        duration: \(String(format: "%.2f", duration))
+        delay: \(String(format: "%.2f", delay))
         force: \(String(format: "%.2f", force))
         """
     }

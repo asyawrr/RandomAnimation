@@ -10,16 +10,9 @@ import SpringAnimation
 
 class AnimationViewController: UIViewController {
 
-    @IBOutlet var animatedView: SpringView!
-    @IBOutlet var animationCodeLabel: UILabel!
-    
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        // Do any additional setup after loading the view.
-//
-//    }
-    
+    @IBOutlet weak var animatedView: SpringView!
+    @IBOutlet weak var animationCodeLabel: UILabel!
+        
         
     @IBAction func runNextAnimationButton(_ sender: SpringButton) {
         let animation = AnimationType.getRandomAnimation()
@@ -29,6 +22,7 @@ class AnimationViewController: UIViewController {
         animatedView.delay = animation.delay
         animatedView.duration = animation.duration
         animatedView.duration = animation.duration
+        animatedView.animate()
         
         animationCodeLabel.text = animation.descryption
         sender.setTitle("Run \(animation.name)", for: .normal)
