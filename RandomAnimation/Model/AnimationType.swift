@@ -16,7 +16,7 @@ struct AnimationType {
     let delay: Double
     let force: Double
     
-    var descryption: String {
+    var description: String {
         """
         name: \(name)
         curve: \(curve)
@@ -32,9 +32,9 @@ extension AnimationType{
         
         let name = animation.animationTypes.randomElement()?.rawValue ?? "pop"
         let curve = animation.curves.randomElement()?.rawValue ?? "spring"
-        let duration = Double.random(in: 0.2...3)
+        let duration = Double.random(in: 0.5...2)
         let delay = Double.random(in: 0...1)
-        let force = Double.random(in: 0.2...3)
+        let force = Double.random(in: 0.8...1.6)
         
         return AnimationType(name: name, curve: curve, duration: duration, delay: delay, force: force)
     }

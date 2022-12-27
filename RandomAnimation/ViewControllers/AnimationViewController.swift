@@ -16,16 +16,17 @@ class AnimationViewController: UIViewController {
     private var animation = AnimationType.getRandomAnimation()
         
     @IBAction func runNextAnimationButton(_ sender: SpringButton) {
-        animation = AnimationType.getRandomAnimation()
+        animationCodeLabel.text = animation.description
         
         animatedView.animation = animation.name
         animatedView.force = animation.force
         animatedView.delay = animation.delay
-        animatedView.duration = animation.duration
+        animatedView.curve = animation.curve
         animatedView.duration = animation.duration
         animatedView.animate()
         
-        animationCodeLabel.text = animation.descryption
+        animation = AnimationType.getRandomAnimation()
+        
         sender.setTitle("Run \(animation.name)", for: .normal)
     }
     
