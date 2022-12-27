@@ -12,10 +12,11 @@ class AnimationViewController: UIViewController {
 
     @IBOutlet weak var animatedView: SpringView!
     @IBOutlet weak var animationCodeLabel: UILabel!
-        
+    
+    private var animation = AnimationType.getRandomAnimation()
         
     @IBAction func runNextAnimationButton(_ sender: SpringButton) {
-        let animation = AnimationType.getRandomAnimation()
+        animation = AnimationType.getRandomAnimation()
         
         animatedView.animation = animation.name
         animatedView.force = animation.force
